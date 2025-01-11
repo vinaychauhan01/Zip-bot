@@ -10,7 +10,7 @@ A Telegram bot that zips files sent by users and returns the archive.
 ## Installation
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/telegram-zip-bot.git
+   git clone https://github.com/vinaychauhan01/zip-bot.git
    cd telegram-zip-bot
    ```
 
