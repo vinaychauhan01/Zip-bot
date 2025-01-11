@@ -27,6 +27,15 @@ async def handle_file(update: Update, context: ContextTypes.DEFAULT_TYPE):
     file = update.message.document
     file_name = file.file_name
 
+    # Await the get_file() coroutine
+    tg_file = await file.get_file()
+
+    # Use the correct download() method to save the file
+    file_path = os.path.join(TEMP_DIR, file_name)
+    await tg_file.download(file_path)
+
+    await update.message.reply_text(f"File {file_name} received! Send /zip to create the archive.") to 
+
     # Download file
     file_path = os.path.join(TEMP_DIR, file_name)
     await file.get_file().download_to_drive(file_path)
